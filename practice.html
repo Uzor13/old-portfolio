@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/font/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="grid-background">
+    <header class="header">
+        <h1 class="title-heading">Uzor's Lair</h1>
+        <nav class="mobile-nav">
+            <a href="javascript:void (0)" class="close" onclick="closeNav()">
+                &times;
+            </a>
+            <ul class="cl-effect-1">
+                <li><span>01</span><a href="#"> My Lair</a></li>
+                <li><span>02</span><a href=""> About Me</a></li>
+                <li><span>03</span><a href=""> Resume</a></li>
+                <li><span>04</span><a href=""> Projects</a></li>
+                <li><span>05</span><a href=""> Contact</a></li>
+            </ul>
+        </nav>
+        <span id="open" class="open" onclick="openNav()">&#9776</span>
+    </header>
+    <section class="main">
+        <h1>Body</h1>
+        <canvas class="background" width="1358" height="646" style="width: 100%; height: 100%;"></canvas>
+    </section>
+    <footer class="footer">
+        <div class="left-footer">
+            <p>2019 &copy; UzorCodes</p>
+        </div>
+        <div class="right-footer">
+            <p><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Uzor</p>
+        </div>
+    </footer>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/tilt.jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="node_modules/typed.js/lib/typed.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var typed = new Typed('.typed', {
+            stringsElement: '#typed-strings',
+            typeSpeed: 40,
+            backSpeed: 30,
+            backDelay: 700,
+            showCursor: true
+        });
+    });
+</script>
+<script>
+    openNav = () => {
+        document.querySelector('#open').style.display = "none";
+        document.querySelector('.mobile-nav').style.width = "100%";
+    };
+    closeNav = () => {
+        document.querySelector('#open').style.display = "block";
+        document.querySelector('.mobile-nav').style.width = "0";
+    };
+    window.onload = function () {
+        Particles.init({
+            selector: '.background',
+            color: '#75A5B7',
+            maxParticles: 130,
+            connectParticles: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    options: {
+                        maxParticles: 80
+                    }
+                }, {
+                    breakpoint: 895,
+                    options: {
+                        maxParticles: 130
+                    }
+                }
+            ]
+        });
+    };
+</script>
+</body>
+</html>
