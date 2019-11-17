@@ -10,24 +10,51 @@
 <body>
 <div class="grid-background">
     <header class="header">
-        <h1 class="title-heading">Uzor's Lair</h1>
-        <nav class="mobile-nav">
-            <a href="javascript:void (0)" class="close" onclick="closeNav()">
-                &times;
-            </a>
-            <ul class="cl-effect-1">
-                <li><span>01</span><a href="#"> My Lair</a></li>
-                <li><span>02</span><a href=""> About Me</a></li>
-                <li><span>03</span><a href=""> Resume</a></li>
-                <li><span>04</span><a href=""> Projects</a></li>
-                <li><span>05</span><a href=""> Contact</a></li>
-            </ul>
+        <nav id="navbar" class="">
+            <div class="nav-wrapper">
+                <!-- Navbar Logo -->
+                <div class="logo">
+
+                    <a href="#home"><i class="fas fa-house-damage"></i> Uzor's Lair</a>
+                </div>
+
+                <!-- Navbar Links -->
+                <ul id="menu">
+                    <li><a href="#about">about me</a></li><!--
+   -->
+                    <li><a href="#resume">resume</a></li><!--
+   -->
+                    <li><a href="#project">projects</a></li><!--
+   -->
+                    <li><a href="#work">work with me</a></li>
+                </ul>
+            </div>
         </nav>
-        <span id="open" class="open" onclick="openNav()">&#9776</span>
+
+
+        <!-- Menu Icon -->
+        <div class="menuIcon">
+            <span class="icon icon-bars"></span>
+            <span class="icon icon-bars overlay"></span>
+        </div>
+
+
+        <div class="overlay-menu">
+            <ul id="menu">
+                <li><a href="#home">About Me</a></li>
+                <li><a href="#services">Resume</a></li>
+                <li><a href="#about">Projects</a></li>
+                <li><a href="#contact">Work with me</a></li>
+            </ul>
+        </div>
     </header>
     <section class="main">
-        <h1>Body</h1>
-        <canvas class="background" width="1358" height="646" style="width: 100%; height: 100%;"></canvas>
+        <div class="hero-grid">
+            <h1 class="body-text">hello.</h1>
+            <img src="img/welcome-2.png" alt="" height="100" width="100">
+        </div>
+
+        <canvas class="background" width="1358" height="700" style="width: 100%; height: 100%;"></canvas>
     </section>
     <footer class="footer">
         <div class="left-footer">
@@ -37,6 +64,7 @@
             <p><i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Uzor</p>
         </div>
     </footer>
+
 </div>
 
 
@@ -44,27 +72,7 @@
 <script src="js/tilt.jquery.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/particles.min.js"></script>
-<script src="node_modules/typed.js/lib/typed.min.js"></script>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', (event) => {
-        var typed = new Typed('.typed', {
-            stringsElement: '#typed-strings',
-            typeSpeed: 40,
-            backSpeed: 30,
-            backDelay: 700,
-            showCursor: true
-        });
-    });
-</script>
 <script>
-    openNav = () => {
-        document.querySelector('#open').style.display = "none";
-        document.querySelector('.mobile-nav').style.width = "100%";
-    };
-    closeNav = () => {
-        document.querySelector('#open').style.display = "block";
-        document.querySelector('.mobile-nav').style.width = "0";
-    };
     window.onload = function () {
         Particles.init({
             selector: '.background',
@@ -78,9 +86,9 @@
                         maxParticles: 80
                     }
                 }, {
-                    breakpoint: 895,
+                    breakpoint: 375,
                     options: {
-                        maxParticles: 130
+                        maxParticles: 50
                     }
                 }
             ]
