@@ -1,33 +1,19 @@
-$('nav ul li a').on('click', function () {
+(function ($) {
 
-    var scrollAnchor = $(this).attr('data-scroll'),
-        scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+    "use strict";
 
-    $('body,html').animate({
-        scrollTop: scrollPoint
-    }, 500);
+    var fullHeight = function () {
 
-    return false;
-
-});
-
-
-$(window).scroll(function () {
-    var windscroll = $(window).scrollTop();
-    if (windscroll >= 100) {
-        $('nav').addClass('fixed');
-        $('.wrapper section').each(function (i) {
-            if ($(this).position().top <= windscroll - 20) {
-                $('nav a.active').removeClass('active');
-                $('nav a').eq(i).addClass('active');
-            }
+        $('.js-fullheight').css('height', $(window).height());
+        $(window).resize(function () {
+            $('.js-fullheight').css('height', $(window).height());
         });
 
-    } else {
+    };
+    fullHeight();
 
-        $('nav').removeClass('fixed');
-        $('nav a.active').removeClass('active');
-        $('nav a:first').addClass('active');
-    }
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
 
-}).scroll();
+})(jQuery);
